@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   
-    // Add a scroll event listener to the window
+    // Add a scroll event listener to the windowd
     window.addEventListener('scroll', () => {
       // Get the height of the header element
       const headerHeight = document.querySelector('.header').offsetHeight;
