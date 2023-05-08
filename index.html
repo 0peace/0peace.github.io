@@ -1,28 +1,4 @@
-<!--feito com ♥ por Gabriel Hausberger
-                       |b
-                       ||
-                       ||,
-                       |'\
-                        |`|
-                        | `|
-                        '| |.
-                         | `L
-                         |  |,
-                         `|  |.                              _,/7
-                          |  `|                       __,---'' /
-                          |   `|              __,---'"   ..- ./
-                          ||   |      _.--=/'',--=-,,  -    ,/
-                          `|   \,/'''`\,     /'   >  \     /'
-                           | ,/'  `. .  `\ ,/'   / \  \   /'
-                   ___,----Y-'      Y     7'   .'.' `\ \ /'
-               _-/''        `\.     .   ,/'    /.'    `\\ 
-           _,-''          ---  \    `  /'    ./.'   __-' "
-        _/''     .--            `\    /'     /,'_--'
-     ,/''  ..                     `"\_     ./ /='
- .,/'                             .--"\    / / 
-<------------------,_____      ,/~'  \ | ./ .'
-                        `"""""""      `|_/\ /-->
-
+<!--Feito com ♥ por Gabriel Hausberger-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,15 +7,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
 	<script src="script.js"></script>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <script src="https://kit.fontawesome.com/0c6ca61b07.js" crossorigin="anonymous"></script>
 	<title> CardioCore</title>
 </head>
 <body>
@@ -47,24 +24,25 @@
 		<a href="#" class="home">Cardio<span class="blue">Core</span></a>
 		
 		<ul class="navlist">
-			<li><a href="#">Home</a></li>
+			<li><a href="#section-1">Home</a></li>
 			<li><a href="#section-2">Sua Saúde</a></li>
-			<li><a href="#">Curiosidades</a></li>
-			<li><a href="#">Sobre O Projeto</a></li>
+			<li><a href="#section-3">Informações</a></li>
+			<li><a href="#section-4">Curiosidades</a></li>
+			<li><a href="#section-5">Sobre O Projeto</a></li>
 		</ul>
 
+		
+	</header>
+	
+	<div class="container">
+	<section class="home-main" id="section-1">
 		<ul class="circlesnav visible">
 			<li><a href="#section-1"></a></li>
 			<li><a href="#section-2"></a></li>
 			<li><a href="#section-3"></a></li>
 			<li><a href="#section-4"></a></li>
+			<li><a href="#section-5"></a></li>
 		</ul>
-
-		<input type="checkbox"/>
-	</header>
-	
-	<section class="home-main" id="section-1">
-		
 		<div class="first-spacer">
 			<p>random text</p>
 		</div>
@@ -93,16 +71,180 @@
 
 	<section class="health" id="section-2">
 
-		<div class="spacer"></div>
+		<div class="spacer">espaco</div>
 
 		<div class="healthdiv">
-			<h1 class="health-text">Aqui voce pode fazer um teste basico para ter uma nocao de como esta sua saude!</h1>
+			<h1 class="health-text">Aqui você pode fazer um teste para ter uma noção básica da sua saúde cardiovascular!</h1>
+			<form class="cardio-form" onsubmit="calcularRisco(); return false;">
+				<div class="form-group">
+					  <label for="idade" class="col-sm-6 control-label">Sua idade</label>
+					  <div class="col-sm-6 cardiaco-options">
+						<select id="idade" class="form-control" required>
+						  <option value="">Selecione...</option>
+						  <option value="0">20-30 anos</option>
+						  <option value="1">31-40 anos</option>
+						  <option value="2">41-45 anos</option>
+						  <option value="3">46-50 anos</option>
+						  <option value="5">51-60 anos</option>
+						  <option value="6">61 anos ou mais</option>
+						</select>
+					  </div>
+					</div>
+					<div class="form-group">
+					  <label for="peso" class="col-sm-6 control-label">Seu peso</label>
+					  <div class="col-sm-6 cardiaco-options">
+						<select id="peso" class="form-control" required>
+						  <option value="">Selecione...</option>
+						  <option value="-1">Inferior em 5kg ao peso normal</option>
+						  <option value="0">Peso normal</option>
+						  <option value="2">Acima do peso (5-10kg)</option>
+						  <option value="3">Acima do peso (11-19kg)</option>
+						  <option value="7">Acima do peso (20-25kg)</option>
+						  <option value="8">Acima do peso (26kg ou mais)</option>
+						</select>
+					  </div>
+					</div>
+					<div class="form-group">
+					  <label for="fumo" class="col-sm-6 control-label">Você fuma?</label>
+					  <div class="col-sm-6 cardiaco-options">
+						<select id="fumo" class="form-control" required>
+						  <option value="">Selecione...</option>
+						  <option value="0">Nunca fumei</option>
+						  <option value="1">Ex-fumante ou fumante de charuto, cachimbo, sem inalar</option>
+						  <option value="2">Menos de 10 cigarros por dia</option>
+						  <option value="8">10-20 cigarros por dia</option>
+						  <option value="9">21-30 cigarros por dia</option>
+						  <option value="10">31-40 cigarros por dia</option>
+						</select>
+					  </div>
+					</div>				
+					<div class="form-group">
+					  <label for="atividade-fisica" class="col-sm-6 control-label">Você pratica atividade física?</label>
+					  <div class="col-sm-6 cardiaco-options">
+						<select id="atividade-fisica" class="form-control" required>
+						  <option value="">Selecione...</option>
+						  <option value="0">Pratico intensamente todos os dias</option>
+						  <option value="1">Pratico bastante</option>
+						  <option value="2">Pratico regularmente</option>
+						  <option value="3">Pratico de vez em quando</option>
+						  <option value="4">Pratico bem pouco</option>
+						  <option value="6">Não pratico</option>
+						</select>
+					  </div>
+					</div>
+					<div class="form-group">
+					  <label for="historico-familiar" class="col-sm-6 control-label">Possui algum histórico familiar?</label>
+					  <div class="col-sm-6 cardiaco-options">
+						<select id="historico-familiar" class="form-control" required> 
+						  <option value="">Selecione...</option>
+						  <option value="0">Ausente</option>
+						  <option value="1">Pai ou mãe com doença cardiovascular</option>
+						  <option value="2">Pai e mãe com doença cardiovascular</option>
+						  <option value="8">Pai, mãe e irmão com doença cardiovascular</option>
+						</select>
+					  </div>
+					</div>
+					<div class="form-group">
+					  <label for="diabetes" class="col-sm-6 control-label">Você possui alguma forma de diabetes?</label>
+					  <div class="col-sm-6 cardiaco-options">
+						<select id="diabetes" class="form-control" required>
+						  <option value="">Selecione...</option>
+						  <option value="0">Sem diabetes</option>
+						  <option value="1">Diabético na família</option>
+						  <option value="2">Pré-diabetico</option>
+						  <option value="7">Diabetes gestacional</option>
+						  <option value="10">Diabetes tipo 1</option>
+						  <option value="10">Diabetes tipo 2</option>
+						</select>
+					  </div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-offset-6 col-sm-6">
+						  <button type="submit" class="btn btn-primary" id="submit-btn">Calcular risco</button>
+						</div>
+					  </div>
+					  <div  class="resposta smooth show" id="resultado">Selecione as opções acima...</div>
+					</form>
+					
+					
 		</div>
-		
-		<div class="information">
-			<h2 class="test-info"></h2>
+		<div class="space">fodase</div>
+	</section>
+<div class="space3"></div>
+
+
+<div class="container"></div>
+	<section class="information" id="section-3">
+	
+	<div class="space5">fodase</div>
+		<Div class="information-title">
+			<h1 class="informationdiv">Como Manter Seu<span id="word" class="red2">Coração</span> Saudável</h1>
+		</Div>
+
+		<Div class="cards-container">
+			<div class="cards">
+				<i class="fa-solid fa-utensils"></i>
+			<h1 class="card">Alimentação</h1>
+			  <p class="card-info">Manter hábitos alimentares saudáveis é essencial para manter a saúde do coração. Inclua em sua dieta alimentos ricos em nutrientes como frutas, verduras, legumes, grãos integrais, carnes magras e peixes. Reduza o consumo de gorduras saturadas e trans, sódio e açúcar. Consuma gorduras saudáveis, como as encontradas no azeite, nozes e peixes. Ao adotar esses hábitos, você estará contribuindo para uma vida mais saudável e feliz.</p>
+            </div>
+
+			<div class="cards">
+				<i class="fa-solid fa-person-walking"></i>
+			<h1 class="card">Atividade Fisica</h1>
+			  <p class="card-info">Praticar atividade fisica é essêncial para qualidade de vida e pode ser incorporado na rotina para ajudar a prevenir doenças cardíacas. É importante praticar atividades físicas regulares, como caminhada, corrida, ciclismo, natação ou dança. Esses exercícios ajudam a fortalecer o coração e os pulmões, além de aumentar a capacidade do corpo de transportar oxigênio e nutrientes para os músculos.</p>
+			</div>
+
+			<div class="cards">
+			    <i class="fa-solid fa-heart-circle-plus"></i>
+			<h1 class="card"> Cuidados</h1>
+			  <p class="card-info">Além de cuidados com a alimentação e atividade fisica, é essencial prestar atenção em quaisquer possíveis sintomas, como dor no peito, falta de ar, tontura e palpitações. Também é de extrema importância fazer consultas regularmente com um médico especializado, porque somente ele é capaz de te diagnosticar com certeza e te dar um auxílio mais aprofundado.</p>
+			</div>
+		</div>
+            <div class="space">fodase</div>   
+	</section>
+
+	<div class="space3"></div>
+
+	<section class="curiosidades" id="section-4">
+		<div class="space7"></div>
+		<div class="curisosidades">
+			<h1 class="curiosidades-title">Você sabia que...</h1>
+		</div>
+		<div class="curiosidades-container">
+			<h2 class="curitiba">Curitiba é a capital brasileira com menos mortes por doenças cardiovasculares</h2>
+			<p class="curitiba-info">A cidade tem esse mérito, pelo fato da criação de um programa chamado "Escute seu Coração", o qual é uma parceria público-privada com a empresa de diagnóstico por imagem Quanta. A compania disponibilizou 10000 exames de escore de cálcio, o qual é capaz de identificar uma doença cardiovascular mesmo em sua fase assintomática.
+				O programa foi um sucesso e tornou Curitiba a capital brasileira com a menor taxa de mortes por doenças cardiovasculares.</p>
+			
+			
+		</div>
+
+		<div class="curiosiades-container-2">
+			<h2 class="finlandia">A Finlândia já foi o país com mais mortes por doenças cardiovasculares no mundo</h2>
+			<p class="finlandia-info">Em 1970, uma região da Finlândia pediu ajuda ao governo porque as mortes de homens por problemas do coração tinham se tornado algo comum.
+				Foi constatado que os principais alimentos consumidos na Finlândia são, manteiga, leite integral, salsicha e sal, também, levando em consideração o habito do fumo muito presene nos dia adia dos filandeses.  Logo, subentendendo-se a elevada taxa de mortes por doenças cardiovasculares no país nórdico.
+				Tendo em vista os problemas descritos anteriormente, o governo da Finlândia incubiu um médico de 27 anos(Pekka Puska) , com mestrado em Ciências Sociais, da tarefa de resolver a situação. Por incrível que pareça, em menos de duas gerações, a queda na mortalidade foi dramática e o estilo de vida dos filandeses tornou-se referência mundial.</p>
+		</div>
+		<div class="space7">fodase</div>   
+	</section>
+	<div class="space3"></div>
+
+	<section class="sobre" id="section-5">
+		<divs class="space8">fodase</div>
+		<div class="sobre-container">
+			<div class="sobre-box">
+				<p class="sobre-texto">Projeto desenvolvido por Gabriel Hausberger, Victor Sondahl e Victorio Moraes</p>
+			    <p class="sobre-texto2">Humanas 09/05/23</p>
+				<a class="fonte-1" href="https://www.curitiba.pr.gov.br/escuteseucoracao">Fonte 1</a>
+				<a  class="fonte-2" href="https://www.bbc.com/portuguese/geral-36699060.amp">Fonte 2</a>
+				<i class="fa-solid fa-heart"></i>
+			</div>
+
+			
+
 		</div>
 
 	</section>
+</div>
 </body>
 </html>
